@@ -36,6 +36,7 @@ public class QuestionService {
         question.setSubject(subject);
         question.setContent(content);
         question.setCreateDate(LocalDateTime.now());
+        question.setModifyDate(LocalDateTime.now());
         question.setAuthor(user);
         questionRepository.save(question);
     }
@@ -50,6 +51,13 @@ public class QuestionService {
         sorts.add(Sort.Order.desc("createDate"));
         Pageable pageable = PageRequest.of(page, 10, Sort.by(sorts));
         return this.questionRepository.findAll(pageable);
+    }
+
+    public void modify(Question question, String subject, String content) {
+        question.setSubject(subject);
+        question.setContent(content);
+        question.setModifyDate(LocalDateTime.now());
+        this.questionRepository.save(question);
     }
 
 }
