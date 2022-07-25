@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+<head>
+  <meta charset="UTF-8">
+<!-- 테일윈드 -->
+<!--  <script src="https://cdn.tailwindcss.com"></script>-->
+
+  <title layout:title-pattern="$LAYOUT_TITLE | $CONTENT_TITLE">게시판</title>
+</head>
+<body>
+<!-- 네비게이션 바 -->
+<nav th:replace="common/navbar:: navbarFragment"></nav>
+
+<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+<th:block layout:fragment="content"></th:block>
+<!-- 기본 템플릿 안에 삽입될 내용 End -->
+<!-- 부트스트랩 Js -->
+<script th:src="@{/bootstrap.min.js}"></script>
+</body>
+</html>
