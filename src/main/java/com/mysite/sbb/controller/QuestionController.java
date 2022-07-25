@@ -96,5 +96,5 @@ public class QuestionController {
         this.questionService.delete(question);
         return "redirect:/";
     }
-    
+
 }
